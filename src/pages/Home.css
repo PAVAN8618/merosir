@@ -1,0 +1,58 @@
+/* src/Home.css */
+.home {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 580px;
+  object-fit: cover;
+}
+.left {
+  font-family: "Clash Grotesk", sans-serif;
+  margin-top: 15%;
+}
+
+.left h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: rgb(4, 2, 5);
+}
+.left p {
+  font-size: large;
+}
+
+#teacher {
+  padding: 10px 50px;
+  border-radius: 90px;
+  font-size: medium;
+  background-color: cadetblue;
+  border: none;
+  cursor: pointer;
+}
+#teacher:hover {
+  color: white;
+  background-color: rgb(56, 124, 126);
+}
+#quiz:hover {
+  color: white;
+  background-color: rgb(56, 124, 126);
+}
+#quiz {
+  padding: 10px 50px;
+  border-radius: 80px;
+  border: none;
+  font-size: medium;
+  background-color: cadetblue;
+  cursor: pointer;
+}
+.teacher_quiz {
+  margin: 30px;
+  display: flex;
+
+  justify-content: space-around;
+}

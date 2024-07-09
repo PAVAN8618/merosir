@@ -1,0 +1,58 @@
+/* src/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #01040c;
+  padding: 10px 20px;
+  font-family: "Clash Grotesk", sans-serif;
+}
+img {
+  width: 20px;
+  background: round;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links .active-link {
+  color: rgb(236, 103, 103);
+}
+
+.nav-links a:hover {
+  color: rgb(235, 100, 100);
+}
+
+.auth-buttons {
+  display: flex;
+}
+
+.auth-buttons .login,
+.auth-buttons .signup {
+  background-color: #222922;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-buttons .login:hover,
+.auth-buttons .signup:hover {
+  background-color: #45a049;
+}
