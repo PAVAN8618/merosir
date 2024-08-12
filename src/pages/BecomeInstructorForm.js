@@ -1,17 +1,13 @@
-// BecomeInstructorForm.js
 import React, { useState } from "react";
 import "./BecomeInstructor.css";
 
-const BecomeInstructorForm = ({ onSubmit }) => {
+const BecomeInstructorForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    age: "",
-    education: "",
-    expertise: "",
-    charge: "",
-    location: "",
-    image: "",
-    imgdata: "",
+    email: "",
+    phone: "",
+    bio: "",
+    gender: "",
   });
 
   const handleChange = (e) => {
@@ -24,105 +20,85 @@ const BecomeInstructorForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Pass the form data to the onSubmit prop
-    onSubmit(formData);
+    // Handle form submission, e.g., send data to the server
+    console.log("Form submitted:", formData);
+    // Clear the form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      bio: "",
+    });
   };
 
   return (
-    <div className="container">
+    <div className="form-container">
       <h2>Become an Instructor</h2>
-      <div className="main">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Name:
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Age:
-            <input
-              type="text"
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Education:
-            <input
-              type="text"
-              name="education"
-              value={formData.education}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Expertise:
-            <input
-              type="text"
-              name="expertise"
-              value={formData.expertise}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Charge:
-            <input
-              type="text"
-              name="charge"
-              value={formData.charge}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Location:
-            <input
-              type="text"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Image URL:
-            <input
-              type="text"
-              name="image"
-              value={formData.image}
-              onChange={handleChange}
-              required
-            />
-            Or
-            <input
-              type="file"
-              id="myfile"
-              name="myfile"
-              multiple
-              value={formData.imgdata}
-              onChange={handleChange}
-            ></input>
-          </label>
-
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter Your Full name Eg: Pavan Kumar"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Your Email name Eg: pnttiwari99@gmail.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone:</label>
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            placeholder="Enter Your Phone number : 8618424406"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="gender">Gender:</label>
+          <select
+            id="gender"
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="bio">Bio:</label>
+          <textarea
+            id="bio"
+            name="bio"
+            placeholder="Enter main category you Teach, more could be added later"
+            value={formData.bio}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit">Create Profile</button>
+      </form>
     </div>
   );
 };

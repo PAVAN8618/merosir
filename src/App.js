@@ -7,6 +7,10 @@ import Home from "./pages/Home";
 import Teachers from "./pages/Teachers";
 import Quiz from "./pages/Quiz";
 import BecomeInstructorForm from "./pages/BecomeInstructorForm";
+import About from "./pages/About";
+import Footer from "./pages/Footer";
+import Connect from "./pages/Connect";
+import CourseList from "./pages/CourseList";
 
 function App() {
   return (
@@ -15,13 +19,14 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/courses" element={<div>My Courses Page</div>} />
+          <Route path="/courses" element={<CourseList />} />
           <Route path="/instructor" element={<BecomeInstructorForm />} />
-          <Route path="/about" element={<div>About Page</div>} />
-          <Route path="/contact" element={<div>Contact Page</div>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Connect />} />
           <Route path="/teacher" element={<Teachers />}></Route>
           <Route path="/quiz" element={<Quiz />}></Route>
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
